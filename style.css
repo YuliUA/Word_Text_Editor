@@ -1,0 +1,95 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#styleMenu {
+	display: flex;
+	justify-content: center;
+}
+
+#myTab {
+	margin: 5px
+}
+
+#txt {
+	width: 100%;
+	height: 100vh;
+	border: none;
+}
+
+form[name=addTableForm] {
+	margin: 20px auto;
+	padding: 10px;
+	justify-content: space-between;
+}
+
+.wraper {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	font-family: sans-serif;
+	padding: 20px;
+}
+
+.alignForm {
+	left: 50%;
+	top: 10px;
+	transform: translate(-50%, 0);
+	z-index: 100;
+}
+
+
+.align-colors {
+	width: 500px;
+	height: 225px;
+	background: white;
+	border-collapse: separate;
+	border-spacing: 5px 5px;
+	padding: 5px;
+	right: 0;
+	top: 10px;
+	z-index: 99;
+}
+
+.align-img {
+	width: 500px;
+	height: 225px;
+	background: white;
+	position: absolute;
+	top: 10px;
+	z-index: 99;
+	padding-top: 5px;
+}
+
+.custom-button {
+	width: 65px;
+	height: 65px;
+	border-color: transparent;
+	border-radius: 10px;
+}
+
+.customCells {
+	border-radius: 10px;
+}
+
+.fontBold {
+	font-weight: bold;
+}
+
+.fontItalic {
+	font-style: italic;
+}
+
+.txtUnderline {
+	text-decoration: underline;
+}
+
+.txtStrike {
+	text-decoration: line-through;
+}
+
+.hide {
+	display: none;
+}

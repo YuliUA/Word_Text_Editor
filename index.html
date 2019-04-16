@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>KR_LVL_2</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.0/css/all.css" integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h" crossorigin="anonymous">
+	<link rel="stylesheet" href="bootstrap.css">
+	<link rel="stylesheet" href="style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div id="styleMenu" class="bg-secondary p-3">
+		<div class="btn-group mr-3" role="group" aria-label="Third group">
+			<button type="button" id="addCode" class="btn btn-secondary bg-white border-0"><i class="fas fa-code text-black-50"></i></button>
+		</div>
+		<div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+			<div class="btn-group mr-2" role="group" aria-label="First group">
+				<button type="button" id="bold" class="btn btn-secondary bg-white border-0"><i class="fas fa-bold text-black-50"></i></button>
+				<button type="button" id="italic" class="btn btn-secondary bg-white border-0"><i class="fas fa-italic text-black-50"></i></button>
+				<button type="button" id="underline" class="btn btn-secondary bg-white border-0"><i class="fas fa-underline text-black-50"></i></button>
+				<button type="button" id="strike" class="btn btn-secondary bg-white border-0"><i class="fas fa-strikethrough text-black-50"></i></button>
+			</div>
+			<div class="btn-group mr-2" id="txtAlignGroup" role="group" aria-label="Second group">
+				<button type="button" class="btn btn-secondary bg-white border-0"><i class="fas fa-align-left text-black-50"></i></button>
+				<button type="button" class="btn btn-secondary bg-white border-0"><i class="fas fa-align-center text-black-50"></i></button>
+				<button type="button" class="btn btn-secondary bg-white border-0"><i class="fas fa-align-right text-black-50"></i></button>
+			</div>
+		</div>
+		<div class="btn-group position-relative " role="group" aria-label="Button group with nested dropdown">
+			<div class="btn-group" role="group">
+				<button id="FontFamily" type="button" class="btn btn-secondary dropdown-toggle bg-white border-0 text-black-50" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-font text-black-50"></i>
+				</button>
+				<div class="dropdown-menu" aria-labelledby="FontFamily">
+					<a class="dropdown-item" href="#">Arial</a>
+					<a class="dropdown-item" href="#">Georgia</a>
+					<a class="dropdown-item" href="#">Impact</a>
+					<a class="dropdown-item" href="#">Tahoma</a>
+					<a class="dropdown-item" href="#">Times New Roman</a>
+					<a class="dropdown-item" href="#">Verdana</a>
+				</div>
+			</div>
+			<div class="btn-group" role="group">
+				<button id="txtSize" type="button" class="btn btn-secondary dropdown-toggle bg-white border-0bg-white border-0 text-black-50" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fas fa-text-height text-black-50"></i>
+				</button>
+				<div class="dropdown-menu" aria-labelledby="txtSize">
+					<a class="dropdown-item" href="#">12px</a>
+					<a class="dropdown-item" href="#">14px</a>
+					<a class="dropdown-item" href="#">16px</a>
+					<a class="dropdown-item" href="#">18px</a>
+					<a class="dropdown-item" href="#">20px</a>
+					<a class="dropdown-item" href="#">22px</a>
+					<a class="dropdown-item" href="#">25px</a>
+					<a class="dropdown-item" href="#">30px</a>
+				</div>
+			</div>
+			<button type="button" id="colorBtn" class="btn btn-secondary bg-white border-0"><i class="fas fa-palette text-black-50"></i></button>
+			<div id="table-wraper" hidden></div>
+			<button type="button" id="imageBtn" class="btn btn-secondary bg-white border-0"><i class="fas fa-image text-black-50"></i></button>
+		</div>
+		<div class="btn-group ml-3" role="group" aria-label="Third group">
+			<button type="button" id="lockBtn" class="btn btn-secondary bg-white border-0"><i class="fas fa-lock text-black-50"></i></button>
+		</div>
+		<div id="img-wraper" hidden class="position-absolute align-img">
+			<ul class="nav nav-tabs" id="myTab" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Color</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Image</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Files</a>
+				</li>
+			</ul>
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab"></div>
+				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab"></div>
+				<div class="tab-pane col-12 fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+					<div class="custom-file">
+						<input type="file" class="custom-file-input" id="loader" aria-describedby="loader">
+						<label class="custom-file-label" for="loader">Choose file</label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<form action="" class="col-4 text-center border position-absolute bg-white alignForm" id="signForm" hidden>
+		<h5 class=" mt-3 mb-3 font-weight-bold">Sign In</h5>
+		<hr>
+		<input type="text" class="form-control mb-3" name="login" placeholder="Login here...">
+		<input type="password" class="form-control mb-3" name="password" placeholder="Password here...">
+		<button class="btn btn-lg btn-secondary btn-block mb-3" type="button" name="button">Sign in</button>
+	</form>
+	<form action="" name="addTableForm" class="col-8 position-absolute bg-white alignForm" hidden>
+		<div class="d-flex flex-wrap">
+			<div class="form-group col-6">
+				<label for="countTR">Count TR:</label>
+				<input type="text" class="form-control" id="countTR" placeholder="Type here...">
+			</div>
+			<div class="form-group col-6">
+				<label for="countTD">Count TD:</label>
+				<input type="text" class="form-control" id="countTD" placeholder="Type here...">
+			</div>
+			<div class="form-group col-6">
+				<label for="widthTD">Width of TD:</label>
+				<input type="text" class="form-control" id="widthTD" placeholder="Type here...">
+			</div>
+			<div class="form-group col-6">
+				<label for="heightTD">Height of TD:</label>
+				<input type="text" class="form-control" id="heightTD" placeholder="Type here...">
+			</div>
+			<div class="form-group col-6">
+				<label for="borderWidth">Width of border:</label>
+				<input type="text" class="form-control" id="borderWidth" placeholder="Type here...">
+			</div>
+			<div class="form-group col-4">
+				<label for="borderStyle">Style of border:</label>
+				<select class="form-control" id="borderStyle">
+					<option>dotted</option>
+					<option>dashed</option>
+					<option>solid</option>
+					<option>double</option>
+					<option>groove</option>
+					<option>inset</option>
+					<option>outset</option>
+					<option>ridge</option>
+					<option>none</option>
+				</select>
+			</div>
+			<div class="form-group col-2">
+				<label for="borderColor">Color of border:</label>
+				<input type="text" class="form-control" id="borderColor" placeholder="Type here...">
+			</div>
+			<button type="button" class="btn btn-danger col-6" id="reset">Reset</button>
+			<button type="button" class="btn btn-success col-6" id="createTable">Create Table</button>
+		</div>
+	</form>
+
+	<form action="" name="addOrListForm" class="col-6 position-absolute bg-white alignForm" hidden>
+
+		<div class="form-group col-12">
+			<label for="countOrLi">Count li item:</label>
+			<input type="text" class="form-control" id="countOrLi" placeholder="Type here...">
+		</div>
+
+		<div class="form-group col-12">
+			<label for="markStyle">Type mark of list:</label>
+			<select class="form-control" id="markStyle">
+				<option value="decimal">1</option>
+				<option value="upper-roman">I</option>
+				<option value="upper-latin">A</option>
+				<option value="lower-latin">a</option>
+				<option value="none">none</option>
+			</select>
+		</div>
+		<div class="form-group form-inline col-12">
+			<button type="button" class="btn btn-danger col-6" name="resetOrList">Reset</button>
+			<button type="button" class="btn btn-success col-6" name="createOrList">Create list</button>
+		</div>
+	</form>
+
+	<form action="" name="addUnListForm" class="col-6 position-absolute bg-white alignForm" hidden>
+
+		<div class="form-group col-12">
+			<label for="countUnLi">Count li item:</label>
+			<input type="text" class="form-control" id="countUnLi" placeholder="Type here...">
+		</div>
+
+		<div class="form-group col-12">
+			<label for="markStyle2">Type mark of list:</label>
+			<select class="form-control" id="markStyle2">
+				<option value="square">square</option>
+				<option value="disk">disk</option>
+				<option value="circle">circle</option>
+				<option value="none">none</option>
+
+			</select>
+		</div>
+		<div class="form-group form-inline col-12">
+			<button type="button" class="btn btn-danger col-6" name="resetUnList">Reset</button>
+			<button type="button" class="btn btn-success col-6" name="createUnList">Create list</button>
+		</div>
+
+	</form>
+
+	<div id="addMenu" class="bg-secondary p-3" hidden>
+		<div class="btn-toolbar justify-content-sm-center" role="toolbar" aria-label="Toolbar with button groups">
+			<div class="btn-group mr-2" role="group" aria-label="First group">
+				<button type="button" id="save" class="btn btn-secondary bg-white border-0"><i class="fas fa-save text-black-50"></i></button>
+				<button type="button" id="addTable" class="btn btn-secondary bg-white border-0"><i class="fas fa-table text-black-50"></i></button>
+				<button type="button" id="olList" class="btn btn-secondary bg-white border-0"><i class="fas fa-list-ol text-black-50"></i></button>
+				<button type="button" id="ulList" class="btn btn-secondary bg-white border-0"><i class="fas fa-list-ul text-black-50"></i></button>
+			</div>
+		</div>
+	</div>
+	<textarea name="addTxt" id="txt" hidden></textarea>
+	<div id="f1" class="wraper">
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quserat itaque!</p>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quserat itaque!</p>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quserat itaque!</p>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quserat itaque!</p>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quserat itaque!</p>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quserat itaque!</p>
+		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Et eum aperiam quserat itaque!</p>
+
+	</div>
+	<script src="script.js"></script>
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
